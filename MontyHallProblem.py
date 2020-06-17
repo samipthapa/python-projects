@@ -13,6 +13,7 @@ car = random.choice(doors)
 
 #Displays the three doors on the screen
 def display_doors():
+    print('\n')
     print("|{0[0]}|\t|{0[1]}|\t|{0[2]}| \n".format(doors))
 
 
@@ -22,6 +23,7 @@ def play_game():
     handle_turns()
     empty_door()
     switch_door()
+    play_again()
 
 
 #Asks user for their answer and determines if the answer is valid
@@ -80,6 +82,25 @@ def switch_door():
             print('Congratulations!! You have won the car')
         else:
             print('The car was in Door {0}'.format(car))
+
+
+def play_again():
+    global car
+    car = random.choice(doors)
+
+    again = input('\nPlay Again? (Y/N): \n')
+    again = again.upper()
+
+    while again not in ["Y", "N"]:
+        again = input("Invalid answer. Choose: (Y/N) ")
+        again = again.upper()
+        if again in ["Y", "N"]:
+            break
+
+    if again == 'Y':
+        play_game()
+    else:
+        return
 
 
 #Starts the game
