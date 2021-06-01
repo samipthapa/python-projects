@@ -1,5 +1,4 @@
 #-------Global Variables--------
-
 #Imports the random module
 import random
 
