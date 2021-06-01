@@ -14,7 +14,7 @@ def multiply(x, y):
 
 # This function divides two numbers
 def divide(x, y):
-    pass
+    return x / y
 
 print("Select operation.")
 print("1.Add")
